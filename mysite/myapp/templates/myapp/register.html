@@ -1,0 +1,28 @@
+{% extends 'myapp/login.html' %}
+{% block content %}
+<form method="post" action="{% url 'signup' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="username">
+     <h3><strong>Enter your Email</strong></h3>
+     <input type="text" id="email" name="email">
+ </div>
+   <div class="username">
+    <h1><strong>Enter your Username</strong></h1>
+    <input type="text" id="id_username" name="username">
+</div>
+<div class="password">
+    <h1>
+        Password:
+        
+    </h1>
+    <input type="text" id="id_password" name="password">
+
+   </div>
+   <div class="submit">
+    <a href="{% url 'login' %}">
+        Already Have Account?
+    </a>
+    <button id="login">Sign Up</button>
+   </div>
+</form>
+{% endblock %}
